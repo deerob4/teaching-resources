@@ -1,6 +1,6 @@
 Task 2 - Saving to a Database
 =============================
-Extend your program from Task 1 so that it can store the films permanently in a database. Modify it so that the user can enter multiple genres for the same film. Your database should contain 3 tables - use what we have gone through in class to come up with a sensible structure.
+Extend your program from Task 1 so that it can store the films permanently in a database. Use what we have gone through in class to come up with a sensible structure. After the user has inputted all their films, the program should output the films it has in the database.
 
 SQL in Python
 -------------
