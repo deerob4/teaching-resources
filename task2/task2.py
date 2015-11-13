@@ -1,6 +1,14 @@
 import sqlite3 as lite
 
-con = lite.connect('films.db')
+
+def run_query(query):
+    con = lite.connect('films.db')
+
+    with con:
+        cur = con.cursor()
+        cur.execute(query)
+
+        return cur.fetchall()
 
 
 def input_films(quantity):
@@ -19,30 +27,24 @@ def input_films(quantity):
 
 
 def save_film(film):
-    with con:
-        cur = con.cursor()
-
-        cur.execute('INSERT INTO films (title, genre, director, rating) VALUES ("{0}", "{1}", "{2}", "{3}")'.format(
-            film['title'],
-            film['genre'],
-            film['director'],
-            film['rating']
-        ))
+    run_query('INSERT INTO films (title, genre, director, rating) VALUES ("{0}", "{1}", "{2}", "{3}")'.format(
+        film['title'],
+        film['genre'],
+        film['director'],
+        film['rating']
+    ))
 
 
 def display_films():
-    with con:
-        cur = con.cursor()
-        cur.execute('SELECT * FROM films')
-        films = cur.fetchall()
+    films = run_query('SELECT * FROM films')
 
-        print('\nYour films:\n')
+    print('\nYour films:\n')
 
-        for film in films:
-            print('Title:', film[1])
-            print('Genre:', film[2])
-            print('Director:', film[3])
-            print('Rating:', str(film[4]) + '\n')
+    for film in films:
+        print('Title:', film[1])
+        print('Genre:', film[2])
+        print('Director:', film[3])
+        print('Rating:', str(film[4]) + '\n')
 
 
 if __name__ == '__main__':
