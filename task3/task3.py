@@ -42,14 +42,6 @@ def find_films(method):
 
         print('The average rating of all your films is {0}'.format(average[0][0]))
 
-    elif method == '5':
-        frequencies = []
-        for x in range(10):
-            freq = run_query('SELECT COUNT(*) FROM films WHERE rating = "{0}"'.format(x))
-            frequencies.append(freq)
-
-        print(frequencies)
-
 
 def display_films(films):
     print('\nYour films:\n')
@@ -68,5 +60,5 @@ if __name__ == '__main__':
             quantity = int(input('\nHow many films do you want to enter? '))
             input_films(quantity)
         elif task == '2':
-            method = input('\nHow do you want to view the films? There are five ways:\n1. Alphabetically\n2. By highest rating\n3. By genre\n4. Average rating\n5. Highest rating in genre.\n')
+            method = input('\nHow do you want to view the films? There are five ways:\n1. Alphabetically\n2. By highest rating\n3. By genre\n4. Average rating')
             find_films(method)
