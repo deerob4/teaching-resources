@@ -1,6 +1,6 @@
 Task 1 - Inputting and Outputting Data
 ======================================
-Create an application that allows the user to record information about their favourite films, and then relay this information back to them. They should be able to input the following:
+Create a program that allows the user to record information about their favourite films, and then relay this information back to them. They should be able to input the following:
 
 * Title
 * Genre
@@ -15,7 +15,7 @@ You will need to make use of the following concepts in Python:
 * Variables
 * Functions
 
-The application flow should follow this pattern:
+The program should follow this general flow:
 
     How many films do you want to enter? 2
 
