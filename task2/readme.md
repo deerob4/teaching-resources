@@ -22,5 +22,5 @@ def run_query(query):
       # Execute your query
       cur.execute(query)
       # Fetch the query results
-      results = cur.fetchall()
+      return cur.fetchall()
 ```
