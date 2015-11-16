@@ -1,2 +1,3 @@
-# Filmify
-Sample film tracking application designed to teach the basics of Python and SQL with GCSE Computer Science students.
+Python Teaching Resources
+=========================
+A small collection of resources that can be used to help students learn Python / SQL / general computational thinking.
