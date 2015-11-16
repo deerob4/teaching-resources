@@ -11,7 +11,7 @@ Remember to include and call the following function when performing actions on t
 import sqlite3 as lite
 
 
-def run_query():
+def run_query(query):
   # Connect to the database.
   con = lite.connect('database.db')
 
@@ -20,7 +20,7 @@ def run_query():
       # Create a cursor object.
       cur = con.cursor()
       # Execute your query
-      cur.execute(YOUR_QUERY)
+      cur.execute(query)
       # Fetch the query results
       results = cur.fetchall()
 ```
