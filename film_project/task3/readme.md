@@ -6,7 +6,7 @@ Now extend your program so that it returns the films in a certain manner, based 
 * All films in a certain genre
 * Films in order of rating (descending)
 * The average (mean) of all ratings
-* The highest ranking film in each genre
+* The highest ranking in each genre
 
 You should display a list of these options at the start of the program, and allow the user to choose which one they want. There should still be the option to add films. The program should follow this general flow:
 
