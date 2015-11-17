@@ -41,6 +41,18 @@ def find_films(method):
         average = run_query('SELECT AVG(rating) FROM films')
 
         print('The average rating of all your films is {0}'.format(average[0][0]))
+        
+    elif method == '5':
+        genres = run_query('SELECT DISTINCT genre FROM films')
+        values = []
+        for genre in genres:
+            values.append({
+                "genre": genre,
+                "rating": run_query('SELECT MAX(rating) FROM films WHERE genre = "{0}"'.format(genre))
+            })
+            
+        for value in values:
+            print('Highest rating in {0} category is {1}'.format(value['genre'], value['rating']))
 
 
 def display_films(films):
@@ -60,5 +72,5 @@ if __name__ == '__main__':
             quantity = int(input('\nHow many films do you want to enter? '))
             input_films(quantity)
         elif task == '2':
-            method = input('\nHow do you want to view the films? There are five ways:\n1. Alphabetically\n2. By highest rating\n3. By genre\n4. Average rating')
+            method = input('\nHow do you want to view the films? There are five ways:\n1. Alphabetically\n2. By highest rating\n3. By genre\n4. Average rating\n5. Highest rating in each genre')
             find_films(method)
